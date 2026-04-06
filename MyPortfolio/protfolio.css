@@ -1,0 +1,2183 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    position: relative;
+    background: #000;
+    min-height: 100vh;
+}
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("img/Home2.png") no-repeat center;
+    background-size: cover;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background:#fff;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services,.portfolio, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.portfolio .portfolio-content,
+.services .serv-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: #DA8D8C;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: rgb(82, 5, 5);
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: crimson;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: white;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #DA8D8C;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #DA8D8C;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+/* ---- particles.js container ---- */
+#particles-js { 
+  position: fixed; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background: transparent;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ---- stats.js (Optional) ---- */
+/* If you aren't using the debug stats, you can delete these classes */
+.count-particles { 
+  background: rgba(0, 0, 34, 0.5); /* Added transparency for a modern look */
+  position: absolute; 
+  top: 48px; 
+  left: 0; 
+  width: 80px; 
+  color: #13E8E9; 
+  font-size: .8em; 
+  text-align: left; 
+  text-indent: 4px; 
+  line-height: 14px; 
+  padding-bottom: 2px; 
+  font-family: Helvetica, Arial, sans-serif; 
+  font-weight: bold; 
+  pointer-events: none; /* FIX: Allows clicking through the stats box */
+}
+
+.js-count-particles { 
+  font-size: 1.1em; 
+}
+
+#stats, .count-particles { 
+  user-select: none; 
+  margin-top: 5px; 
+  margin-left: 5px; 
+}
+
+#stats { 
+  border-radius: 3px 3px 0 0; 
+  overflow: hidden; 
+}
+
+.count-particles { 
+  border-radius: 0 0 3px 3px; 
+}
+
+
+/* home section styling */
+.home{
+    display: flex;
+    background: transparent;
+    height: 100vh;
+    color:#fff;
+    min-height: 500px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-right: -300px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 .typing1{
+    color: crimson;
+    font-weight: 500;
+}
+
+   
+
+/* about section styling */
+#about{
+    padding: 80px 50px;
+    background-color: rgba(39, 39, 39, 0.75);
+    font-family: 'Ubuntu', sans-serif;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 40%;
+}
+.about-col-1 img{
+    width: 80%;
+    border-radius: 15px;
+
+}
+.about-col-2{
+    flex-basis: 60%;
+    color:#fff;
+}
+.sub-title{
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+
+ 
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+
+}
+.tab-links{
+    color: #fff;
+    margin-right: 70px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #DA8D8C;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    
+}
+.tab-contents ul li span{
+    color:#DA8D8C;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+    
+}
+.tab-contents.active-tab{
+    display: block;
+
+}
+
+
+
+/* my work section*/
+#portfolio {
+    padding: 100px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Title */
+.sub-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+/* Each Work Card */
+.work {
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    height: 210px;  /* Fixed uniform height */
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
+.work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Keeps images filling the box */
+    border-radius: 10px;
+    display: block;
+}
+
+/* Remove layer and hover effects completely */
+.layer {
+    display: none;
+}
+
+.work:hover img {
+    transform: none;
+}
+
+.work:hover .layer {
+    height: 0;
+}
+
+/* Optional: Add title under each image */
+.work-title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff; /* Set to white or your theme */
+}
+
+/* Button */
+.btn {
+    display: block;
+    margin: 50px auto 0;
+    width: fit-content;
+    border: 1px solid #DA8D8C;
+    padding: 14px 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #DA8D8C;
+    font-weight: 500;
+    transition: background 0.5s, color 0.5s;
+}
+
+.btn:hover {
+    background: #DA8D8C;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .work-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .work-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* services section styling */
+#services{
+    padding: 100px 0;
+    background-color:#344953;
+}
+
+.services-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
+    grid-gap: 50px;
+    margin-top: 50px;
+    color: #fff;
+}
+.services-list div{
+    background:#333;
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition:background 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size:50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size:30px ;
+    font-weight: 500;
+    margin-bottom:15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color:#fff;
+    font-size:12px;
+    margin-top: 10px;
+    display:inline-block;
+}
+.services-list div:hover{
+    background:crimson;
+
+}
+
+
+/*contact section*/
+#contact{
+    position: relative;
+    padding: 100px 0 60px; 
+    margin-top: 80px;
+
+}
+.contact-left{
+    flex-basis:35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    color: #fff;
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: crimson;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition:transform 0.5s;
+    
+}
+.social-icons a:hover{
+    color: crimson;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display:inline-block;
+    background:crimson;
+    color: #fff;
+
+}
+.contact-right form{
+    width: 100%;
+}
+form input,form textarea{
+    width: 90%;
+    border: 0;
+    outline: none;
+    background: #333;
+    padding: 15px;
+    margin:15px 0 ;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -28px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.copyright i{
+    color:crimson;
+}
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .portfolio .portfolio-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .portfolio .portfolio-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+
+
+
+
+
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    position: relative;
+    background: #000;
+    min-height: 100vh;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background:#fff;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services,.portfolio, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.portfolio .portfolio-content,
+.services .serv-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: #DA8D8C;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: rgb(82, 5, 5)C;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: crimson;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: white;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #DA8D8C;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #DA8D8C;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+/* ---- particles.js container ---- */
+#particles-js { 
+  position: fixed; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background: transparent;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ---- stats.js (Optional) ---- */
+/* If you aren't using the debug stats, you can delete these classes */
+.count-particles { 
+  background: rgba(0, 0, 34, 0.5); /* Added transparency for a modern look */
+  position: absolute; 
+  top: 48px; 
+  left: 0; 
+  width: 80px; 
+  color: #13E8E9; 
+  font-size: .8em; 
+  text-align: left; 
+  text-indent: 4px; 
+  line-height: 14px; 
+  padding-bottom: 2px; 
+  font-family: Helvetica, Arial, sans-serif; 
+  font-weight: bold; 
+  pointer-events: none; /* FIX: Allows clicking through the stats box */
+}
+
+.js-count-particles { 
+  font-size: 1.1em; 
+}
+
+#stats, .count-particles { 
+  user-select: none; 
+  margin-top: 5px; 
+  margin-left: 5px; 
+}
+
+#stats { 
+  border-radius: 3px 3px 0 0; 
+  overflow: hidden; 
+}
+
+.count-particles { 
+  border-radius: 0 0 3px 3px; 
+}
+
+
+/* home section styling */
+.home{
+    display: flex;
+    background: transparent;
+    height: 100vh;
+    color:#fff;
+    min-height: 500px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-right: -300px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 .typing1{
+    color: crimson;
+    font-weight: 500;
+}
+
+   
+
+/* about section styling */
+#about{
+    padding: 80px 50px;
+    background-color: rgba(39, 39, 39, 0.75);
+    font-family: 'Ubuntu', sans-serif;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 40%;
+}
+.about-col-1 img{
+    width: 80%;
+    border-radius: 15px;
+
+}
+.about-col-2{
+    flex-basis: 60%;
+    color:#fff;
+}
+.sub-title{
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+
+ 
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+
+}
+.tab-links{
+    color: #fff;
+    margin-right: 70px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #DA8D8C;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    
+}
+.tab-contents ul li span{
+    color:#DA8D8C;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+    
+}
+.tab-contents.active-tab{
+    display: block;
+
+}
+
+
+/* my work section*/
+#portfolio{
+    padding: 100px 0;
+
+}
+.work-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
+    grid-gap: 40px;
+    margin-top: 50px;
+    color: #fff;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow:hidden;
+}
+.work img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;/*on 0.5 sec layer shows*/
+}
+.layer{
+    width:100%;
+    height:0%;/*dont show layer*/
+    background: linear-gradient(rgba(0,0,0,0.6),crimson);/*black color with 60% opsecity*/
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow:hidden;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size:  14px;
+    transition: height 0.5s;/*layer comes from bottom to up*/
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top:20px;
+    color:crimson;
+    text-decoration: none;
+    font-size:19px;
+    line-height: 60px;
+    background:#fff;
+    width: 55px;
+    height:55px;
+    border-radius: 50%; /*this become circle for link */
+    text-align:center ;
+}
+.work:hover img{
+    transform:scale(1.1);
+}
+.work:hover .layer{
+    height:100% ;/*shows the layer(work name & description after moving cursor on img*/
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #DA8D8C;
+    padding: 14px 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #DA8D8C;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #DA8D8C;
+    color: #fff;
+
+}
+
+/* services section styling */
+#services{
+    padding: 100px 0;
+    background-color:#344953;
+}
+
+.services-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
+    grid-gap: 50px;
+    margin-top: 50px;
+    color: #fff;
+}
+.services-list div{
+    background:#333;
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition:background 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size:50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size:30px ;
+    font-weight: 500;
+    margin-bottom:15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color:#fff;
+    font-size:12px;
+    margin-top: 10px;
+    display:inline-block;
+}
+.services-list div:hover{
+    background:crimson;
+
+}
+
+
+/*contact section*/
+#contact{
+    padding: 100px 0; 
+    margin-top: 80px;
+
+}
+.contact-left{
+    flex-basis:35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    color: #fff;
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: crimson;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition:transform 0.5s;
+    
+}
+.social-icons a:hover{
+    color: crimson;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display:inline-block;
+    background:crimson;
+    color: #fff;
+
+}
+.contact-right form{
+    width: 100%;
+}
+form input,form textarea{
+    width: 90%;
+    border: 0;
+    outline: none;
+    background: #333;
+    padding: 15px;
+    margin:15px 0 ;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -28px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.copyright i{
+    color:crimson;
+}
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .portfolio .portfolio-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .portfolio .portfolio-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+
+
+
+
+
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    position: relative;
+    background: #000;
+    min-height: 100vh;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background:#fff;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services,.portfolio, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.portfolio .portfolio-content,
+.services .serv-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: #DA8D8C;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: rgb(82, 5, 5);
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: crimson;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: white;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #DA8D8C;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #DA8D8C;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+/* ---- particles.js container ---- */
+#particles-js { 
+  position: fixed; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background: transparent;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ---- stats.js (Optional) ---- */
+/* If you aren't using the debug stats, you can delete these classes */
+.count-particles { 
+  background: rgba(0, 0, 34, 0.5); /* Added transparency for a modern look */
+  position: absolute; 
+  top: 48px; 
+  left: 0; 
+  width: 80px; 
+  color: #13E8E9; 
+  font-size: .8em; 
+  text-align: left; 
+  text-indent: 4px; 
+  line-height: 14px; 
+  padding-bottom: 2px; 
+  font-family: Helvetica, Arial, sans-serif; 
+  font-weight: bold; 
+  pointer-events: none; /* FIX: Allows clicking through the stats box */
+}
+
+.js-count-particles { 
+  font-size: 1.1em; 
+}
+
+#stats, .count-particles { 
+  user-select: none; 
+  margin-top: 5px; 
+  margin-left: 5px; 
+}
+
+#stats { 
+  border-radius: 3px 3px 0 0; 
+  overflow: hidden; 
+}
+
+.count-particles { 
+  border-radius: 0 0 3px 3px; 
+}
+
+/* home section styling */
+.home{
+    display: flex;
+    background: transparent;
+    height: 100vh;
+    color:#fff;
+    min-height: 500px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-right: -300px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 .typing1{
+    color: crimson;
+    font-weight: 500;
+}
+
+   
+
+/* about section styling */
+#about{
+    padding: 80px 50px;
+    background-color: rgba(39, 39, 39, 0.75);
+    font-family: 'Ubuntu', sans-serif;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 40%;
+}
+.about-col-1 img{
+    width: 80%;
+    border-radius: 15px;
+
+}
+.about-col-2{
+    flex-basis: 60%;
+    color:#fff;
+}
+.sub-title{
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+
+ 
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+
+}
+.tab-links{
+    color: #fff;
+    margin-right: 70px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #DA8D8C;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    
+}
+.tab-contents ul li span{
+    color:#DA8D8C;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+    
+}
+.tab-contents.active-tab{
+    display: block;
+
+}
+
+
+/* my work section*/
+#portfolio{
+    padding: 100px 0;
+
+}
+.work-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
+    grid-gap: 40px;
+    margin-top: 50px;
+    color: #fff;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow:hidden;
+}
+.work img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;/*on 0.5 sec layer shows*/
+}
+.layer{
+    width:100%;
+    height:0%;/*dont show layer*/
+    background: linear-gradient(rgba(0,0,0,0.6),crimson);/*black color with 60% opsecity*/
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow:hidden;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size:  14px;
+    transition: height 0.5s;/*layer comes from bottom to up*/
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top:20px;
+    color:crimson;
+    text-decoration: none;
+    font-size:19px;
+    line-height: 60px;
+    background:#fff;
+    width: 55px;
+    height:55px;
+    border-radius: 50%; /*this become circle for link */
+    text-align:center ;
+}
+.work:hover img{
+    transform:scale(1.1);
+}
+.work:hover .layer{
+    height:100% ;/*shows the layer(work name & description after moving cursor on img*/
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #DA8D8C;
+    padding: 14px 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #DA8D8C;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #DA8D8C;
+    color: #fff;
+
+}
+
+/* services section styling */
+#services{
+    padding: 100px 0;
+    background-color: transparent;
+}
+#services .container{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: 0 auto;
+}
+
+.services-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    color: #fff;
+}
+.services-list div{
+    background:#333;
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition:background 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size:50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size:30px ;
+    font-weight: 500;
+    margin-bottom:15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color:#fff;
+    font-size:12px;
+    margin-top: 10px;
+    display:inline-block;
+}
+.services-list div:hover{
+    background:crimson;
+
+}
+
+
+/*contact section*/
+#contact{
+    padding: 100px 0; 
+    margin-top: 80px;
+
+}
+#contact .container{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: 0 auto;
+}
+#contact .row{
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 60px;
+    flex-wrap: nowrap;
+}
+.contact-left{
+    flex: 0 0 35%;
+    max-width: 35%;
+}
+.contact-right{
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+.contact-left p{
+    color: #fff;
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: crimson;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition:transform 0.5s;
+    
+}
+.social-icons a:hover{
+    color: crimson;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display:inline-block;
+    background:crimson;
+    color: #fff;
+
+}
+.contact-right form{
+    width: 100%;
+}
+form input,form textarea{
+    width: 90%;
+    border: 0;
+    outline: none;
+    background: #333;
+    padding: 15px;
+    margin:15px 0 ;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+#contact form input,
+#contact form textarea{
+    width: 100%;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -28px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.copyright i{
+    color:crimson;
+}
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+    #services .container{
+        padding: 0 50px;
+    }
+    #contact .container{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    #contact .contact-left,
+    #contact .contact-right{
+        flex-basis: 100%;
+    }
+    #contact .row{
+        gap: 35px;
+        flex-wrap: wrap;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .portfolio .portfolio-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    #services .container{
+        padding: 0 23px;
+    }
+    #contact .container{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .portfolio .portfolio-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+
+    @keyframes pulse-galaxy {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+}
+
+#cursor-aura {
+  animation: pulse-galaxy 4s infinite ease-in-out;
+}
+}
+
+.container{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: 0 auto;
+}
+
+#portfolio .work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+#portfolio .work{
+    width: 100%;
+    height: auto;
+}
+
+#portfolio .work img,
+.about-col-1 img{
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 991px) {
+    .container{
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 900px) {
+    .home .home-content{
+        padding: 0 10px;
+        text-align: center;
+    }
+    .home .home-content .text-2{
+        margin-right: 0;
+    }
+
+    #contact .row{
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    #contact .contact-left,
+    #contact .contact-right{
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    #contact{
+        padding-bottom: 90px;
+    }
+    .copyright{
+        bottom: 0;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 690px) {
+    .container{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 54px;
+    }
+    .home .home-content .text-3{
+        font-size: 28px;
+    }
+    .services-list{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .home .home-content .text-2{
+        font-size: 44px;
+    }
+    .copyright{
+        font-size: 12px;
+        padding-top: 6px;
+    }
+}
+

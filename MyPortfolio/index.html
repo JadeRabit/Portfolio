@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenjie Protfolio</title>
+    <link rel="stylesheet" href="protfolio.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <script src="protfolio.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r17/Stats.min.js"></script>
+
+</head>
+<body>
+    
+    <!-- particles.js container --> 
+    <div id="particles-js"></div> 
+    <!-- stats - count particles --> 
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+    <!-- stats.js lib --> 
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    
+    
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">K&K<span>TechCom.</span></a></div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#about" class="menu-btn">About</a></li>
+                <li><a href="#portfolio" class="menu-btn">My-work</a></li>
+                <li><a href="#services" class="menu-btn">Seminar</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- home section start -->
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Hello, my name is</div>
+                <div class="text-2">Kenjie Villamar</div>
+                <div class="text-3">And I'm <span class="typing1"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about section start -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="img/pt1.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        Hi! I’m Kenjie B. Villamar , 21 years old , living in Zaragoza Nueva Ecija . 
+                        I am currently studying at Phinma Araullo University South Campus, taking a Bachelor of Science in Information Technology. 
+                        And I’m Innovation person that can implement new ideas and create value for the customer and stakeholders. 
+                        I am confident that I am a creative person because of my hobby editing, sound operator, and designing something I really want, 
+                        and I have many ideas designed to present to many clients. Being visionary, I vision some of our work is successfully and approved.
+                        If I can use it in the future, I am looking forward to what I can see and prevent what happened in the future. 
+                        I think I am not 100% entrepreneurial, but if I learned about those businesses I am 100% guaranteed I will make sure the business will be up to the market and help to improve the quality of business.
+                    </p>   
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>      
+                    <p class="tab-links" onclick="opentab('education')">Education</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </p>
+                </div>
+
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>HTML</span></li>
+                        <li><span>CSS</span></li>
+                        <li><span>PYTHON</span></li>
+                        <li><span>JAVA</span></li>
+                        <li><span>GITHUB</span></li>
+                        <li><span>FIGMA</span></li>
+                        <li><span>LARAVEL</span></li>
+                        <li><span>JAVASCRIPT</span></li>
+                        <li><span>CANVA</span></li>
+                        
+
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2019</span><br>ZARAGOZA NATIONAL HIGH SCHOOL  <br> JUNIOR HIGH</li>
+                        <li><span>2022</span><br>CARMEN NATIONAL HIGH SCHOOL<br>SENIOR HIGH SCHOOL</li>
+                        <li><span>2026</span><br>PHINMA ARAULLO UNIVERSITY<br> BS IN INFORMATION TECHNOLOGY <li>
+                    </ul>
+                </div>
+        </div>
+        </div>
+    </div>
+
+
+<!------my work section--->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            
+            <div class="work">
+                <img src="img/mikel.jpg" alt="">
+                <div class="layer">
+                    <h3>Vet Appointment System</h3>
+                    <p>We proposed this project for easy appointment of vet. Build In Laravel</p>
+                    <a href="https://drive.google.com/drive/folders/15gwNbm0FqtRGMWGlz5WsakqN0wH3hbw1?usp=sharing">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="img/Unversity.png" alt="">
+                <div class="layer">
+                    <h3>Mikel University</h3>
+                    <p>This project is all about student information and profiles.Build in PHP WITH SQL DATABASE</p>
+                    <a href="https://drive.google.com/drive/folders/1rh6fon2XJZVEujGV6X0PO4ZDsW2fcMZ_?usp=sharing"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="img/intergrated.png" alt="">
+                <div class="layer">
+                    <h3>Integrated Subjects</h3>
+                    <p>This Subject we build Mini Appointment System with the real Client base andn this system have data collection. Build on PHP and the Database is Mongo DB</p>
+                    <a href="https://drive.google.com/drive/folders/1ep66ELmljUwCN_g8Qj8_RU9MjmP5gWgI?usp=sharing"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="img/barrow.png" alt="">
+                <div class="layer">
+                    <h3>Barrowing Books And Library Management</h3>
+                    <p>This Library Management build using java GUI with special features of Calculator</p>
+                    <a href="https://drive.google.com/drive/folders/1OECAXpuwoXnFK5BZ6rlJbfQ7oNFMJacH?usp=sharing"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="img/pathofchosen.jpg" alt="">
+                <div class="layer">
+                    <h3>Path of the Chosen</h3>
+                    <p>This Game Inspired By Pokemon Emerald But the version of the game is based on the Philippine Mythical Creature</p>
+                    <a href="https://drive.google.com/drive/folders/1t7T1VsAz8OcoqeFw-e3QMPsqyESGcXrb?usp=drive_link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="img/furni.png" alt="">
+                <div class="layer">
+                    <h3>Furni Shop E Commerce</h3>
+                    <p>This e-commerce are selling handy craft furniture. Build Pure HTML and CSS. </p>
+                    <a href="https://drive.google.com/drive/folders/19lCt9WYFcItL1m0IQCJWSNwvIYI5NA6Q?usp=sharing"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Optional: Add 3 more for full 3x3 -->
+            <div class="work">
+                <img src="img/Etomax.png" alt="">
+                <div class="layer">
+                    <h3>Etomax </h3>
+                    <p>Build by Android Studio, Etomax is based as a google Classroom help the student tract her daily Activities and Scores.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="img/MoranaStore.jpg" alt="">
+                <div class="layer">
+                    <h3>MoranaStore</h3>
+                    <p>This E-Commerce site is one of the big store in thier place that need to provide A system that help their suki buy easly.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="img/pt1.png" alt="">
+                <div class="layer">
+                    <h3>More Projects</h3>
+                    <p>Click see more to view more works and project highlights.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <a href="my-work.html" class="btn">See More</a>
+</div>
+</div>
+
+
+
+
+    <!-- services section start -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Seminars</h1>
+            <div class="services-list">
+              <div>
+                <i class="fas fa-code"></i>
+                <h2>Virtual Assistant Online</h2>
+                <p>This Certification of compliteting course can boost our knowlegde in Virtual Assistant world.
+                </p>
+                <a href="https://drive.google.com/drive/folders/1v3DNAJGZWOPPxVgiN1UaVmWgs6J9ReTD?usp=sharing">learn more</a>
+              </div>
+    
+              <div>
+                <i class="fas fa-laptop-code"></i>
+                <h2>Saleforce </h2>
+                <p>This one of our asset we gain
+                    badges.
+                </p>
+                <a href="https://www.salesforce.com/trailblazer/avdd9lijcdca8lq1xb">learn more</a>
+              </div>
+
+            <div>
+                <i class="fab fa-app-store"></i>
+                <h2>IT Certification</h2>
+                <p>This my Certification of different online Course
+                    in TESDA and Oracle and Certification Seminar of our School.
+                </p> 
+                <a href="https://drive.google.com/drive/folders/17n1pc67uoTow_ZJoCCYokdZf8pLaSP0J?usp=drive_link">learn more</a>
+              </div>
+            </div>
+
+
+
+            
+<!-------------contanct section--------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> kenjievillamr456@gmail.com</p>
+                <p><i class="fas fa-phone-square-alt"></i>09497426883</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/kenje-villamar-b9628b223/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/kenjoyyyyyyy/?hl=en"><i class="fab fa-instagram"></i></a>
+                    <a href="https://web.facebook.com/kenjoy.12"><i class="fab fa-facebook"></i></a>
+                    <a href="https://discord.gg/n3TyRCDW"><i class="fab fa-discord"></i></a>
+                    <a href="https://kenjievillamar12.jobs180.com/?fbclid=IwAR2UmtG0VLvNbLma0fkTB34O7F4IHYDXGr0N7zXiFjHx7IegYUgev6l56Pk"><i class="fas fa-unlink"></i></a>
+                    <a href="http://mygallery.free.nf/index.html"><i class="fa fa-image"></i></a>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1HollFyHcvoEgHI1H-zApJyJBZg2KziHj?usp=sharing" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form action="https://formsubmit.co/kenjievillamar.pro@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Message from Portfolio">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email"required>
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" name="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>Copyright @ Villamar. Made with Passion <i class="fas fa-heart"></i></p>
+    </div>
+</div>
+
+
+    <script>
+//for about me to show skills & edu when we click on it
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+
+         function opentab(tabname){//opentab-onclick func //tabname is parameter, if tabname is skills then event shows link & content
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");//when we click on skills hide pink line(pink line)
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");//hide description(content)
+            }
+            event.currentTarget.classList.add("active-link");//to get pink line(link) under skills,education(after parameter passed)
+            document.getElementById(tabname).classList.add("active-tab");//shows the content(after parameter passed)
+         }
+
+         const core = document.getElementById('cursor-core');
+         const aura = document.getElementById('cursor-aura');
+         
+        window.addEventListener('mousemove', (e) => {
+        const { clientX: x, clientY: y } = e;
+
+  // Reveal elements
+  core.style.opacity = "1";
+  aura.style.opacity = "1";
+
+  // Move the Core (centered: 4px / 2 = 2)
+  core.style.transform = `translate3d(${x - 2}px, ${y - 2}px, 0)`;
+
+  // Move the Aura (centered: 256px / 2 = 128)
+  aura.style.transform = `translate3d(${x - 128}px, ${y - 128}px, 0)`;
+});
+    </script>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+    </div> 
+</body>
+</html>
